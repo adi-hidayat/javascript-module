@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aggregating Modules</title>
+</head>
+<body>
+    <h2>Aggregating Modules</h2>
+    - Ada waktunya kadang kita ingin meng agregate beberapa module menjadi satu agar
+    penggunaannya lebih sederhana  <br>
+    - Jika module sudah banyak, maka ketika butuh banyak kode dari banyak module, kita harus
+    sebutkan nama module tersebut tiap kalo import <br>
+    - Dengan melakukan aggregate, kita bisa membuat module aggregate, yang isinya menggabungkan
+    export dari module lain <br>
+    - Caranya sangat mudah, cukup gunakan perintah : <br>
+    export {a, b, c} from "/module.ks"
+</body>
+<script type="module" src="lib/agg.js"></script>
+<script type="module">
+    import {Person, Person2, sumValue} from "./lib/agg.js";
+    console.log(new Person("Adi"));
+    console.log(sumValue(2,2));
+    console.log(new Person2())
+</script>
+</html>

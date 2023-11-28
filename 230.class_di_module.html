@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class di Module</title>
+</head>
+<body>
+    <h2>Class di Module</h2>
+    - Selain function dan juga variable, di module juga kita bisa menambahkan class <br>
+    - Secara default, class tersebut hanya bisa diakses dari dalam module nya saja, tidak bisa diluar
+    module <br>
+    - Jika kita ingin mengekspos class yang kita buat, kita juga bisa menggunakan kata kunci export di
+    awal deklarasi class nya
+</body>
+<script type="module" src="lib/product.js"></script>
+<script type="module">
+    import {Product} from "./lib/product.js";
+
+    let name = "Bakso Jumbo";
+    let price = 35000;
+    const product = new Product(name, price);
+
+    console.log(product);
+    console.log(product.detail(product.name, product.price));
+</script>
+</html>

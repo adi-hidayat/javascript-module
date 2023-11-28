@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tanpa Module</title>
+</head>
+<body>
+    <h2>Tanpa Module</h2>
+    - Sebelum kita membahas JavaScript Module, sekarang kita akan coba dulu tapa menggunakan
+    module <br>
+    - Saat kita membuat file JavaScript, lalu kita load file JavaScript tersebut di web, secara default
+    semua kode JavaScript di file tersebut bisa diakses, baik itu variable, function atau class
+
+    <h2>Dengan Module</h2>
+    - Namun jika kita menggunakan module, kita bisa secara selektif memilih bagian kode mana yang
+    ingin kita ekspos keluar <br>
+    - Secara default kode yang kita buat menggunakan JavaScript Module tidak bisa digunakan dari luar
+    file, kecuali kita memintanya untuk mengekspos keluar
+</body>
+
+<!--tanpa module-->
+<script src="lib/app.js"></script>
+<script>
+    sayHello("Adi")
+    sayGoodBye("Hell")
+</script>
+<!--end tanpa module-->
+
+
+
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Variabel Di Module</title>
+</head>
+<body>
+    <h2>Variable di Module</h2>
+    - Salah satu hal yang membingungkan pada variable di JavaScript adalah ketika kita membuat
+    variable di global scope, maka variable tersebut bisa diubah nilainya oleh file JavaScript lain <br>
+    - Saat kita menggunakan module, ketika kita but variable, maka variable tersebut hanya berada
+    pada module tersebut, tidak bisa digunakan di module lain
+
+</body>
+
+<script type="module" src="lib/variable.js"></script>
+<script type="module">
+    import {appname} from "./lib/variable.js";
+
+    console.log(appname);
+</script>
+</html>

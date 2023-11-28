@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Module Object</title>
+</head>
+<body>
+    <h2>Module Object</h2>
+    - Ketika sebuah module berisikan banyak sekali export data, maka melakukan import satu persatu
+    akan terlihat berantakan <br>
+    - Rekomendasinya ketika kita ingin mengimport module yang sangat banyak export data nya,
+    gunakan Module Object <br>
+    - Module Object sederhananya adalah object JavaScript yang berisi attribute hasil yang di export
+    pada module <br>
+    - Cara membuat module object bisa kita lakukan misal seperti ini :
+    import * as NamaModule from "/module.js" <br>
+    - Selanjutnya kita bisa gunakan NamaModule sebagai object untuk module tersebut
+</body>
+<script type="module" src="lib/module_object.js"></script>
+<script type="module">
+    import * as Product from "./lib/module_object.js";
+
+    console.log(Product.name);
+    console.log(Product.price);
+    console.log(Product.isExpensive());
+    console.log(new Product.Product("Indomie"));
+</script>
+</html>

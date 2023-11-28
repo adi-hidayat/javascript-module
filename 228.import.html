@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Import</title>
+</head>
+<body>
+    <h2>Import</h2>
+    - Export digunakan untuk mengekspos kode di module, jika kita ingin menggunakan kode yang
+    sudah di ekspos di module, kita bisa menggunakan kata kunci import <br>
+    - Cara menggunakan kata kunci import adalah sebagai berikut :
+    import (namaFunction, namaVariable, NamaClass] from "lokasi-module.js" <br>
+    - Module hanya bisa digunakan di module lain, jadi pastikan ketika membuat script, kita harus
+    menggunakan type module <br>
+    - Saat menggunakan import, kita tidak perlu lagi menambahkan script module sc satu per satu,
+    karena sudah di handle ole Browser secara otomatis ketika menggunakan module
+</body>
+<script src="lib/apps.js" type="module"></script>
+<script type="module">
+  import {sayHello, sayGoodBye} from "./lib/apps.js";
+
+  sayHello("Adi")
+</script>
+</html>

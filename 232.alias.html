@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Alias</title>
+</head>
+<body>
+    <h2>Alias</h2>
+    - Saat kita membuat aplikasi JavaScript, semakin lama kemungkinan module akan semakin banyak <br>
+    - Dan bisa saja akan ada nama variable tau nama function atau nama class yang sama antar module <br>
+    - Hal ini akan menyulitkan ketika ada module yang menggunakan beberapa module, namun ternyata
+    variable, function atau class nya memiliki nama yang sama <br>
+    - Untungnya, module memiliki fitur alias, dimana kita bisa mengubah nama variable, function atau
+    class nya
+
+    <h2>Alias di Export</h2>
+    - Kita dapat menggunakan alias ketika melakukan export di module <br>
+    - Caranya menggunakan kata kunci as, lalu diikuti dengan nama alias :
+    export ( variable as variableLain, function as functionLain, Class as ClassLain }
+
+    <h2>Alias di Import</h2>
+    - Atau rekomendasinya sebenarnya melakukan alias ketika melakukan import <br>
+    - Sehingga ketika export, nama tidak perlu berubah <br>
+    - Untuk melakukan alias ketika import, kita bisa gunakan kata kunci as, dikuti dengan nama alias : <br>
+    import (function as functionLain } from "/module.js"
+</body>
+<script type="module" src="lib/alias_export.js"></script>
+<script type="module" src="lib/alias_import.js"></script>
+
+<script type="module">
+  // alias export
+  import {perusahaan, total, Perusahaan} from "./lib/alias_export.js";
+
+  console.log(perusahaan);
+  console.log(total(1,2))
+  console.log(new Perusahaan());
+  // end alias export
+
+  // alias import
+  import {company as perusahaan2, sum as total2, Company as Perusahaan2} from "./lib/alias_import.js";
+  console.log(perusahaan2);
+  console.log(total2(1,2))
+  console.log(new Perusahaan2());
+  // end import alias
+</script>
+</html>

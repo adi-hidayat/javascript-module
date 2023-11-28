@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Export Default</title>
+</head>
+<body>
+    <h2>Export Default</h2>
+    - Sampai saat ini, kita selalu melakukan export dengan nama, baik it nama variable, function dan
+    yang lainnya <br>
+    - Ada juga fitur yang bernama export default, ini adalah fitur yang digunakan untuk mempermudah
+    untuk membuat default data di module, dan membantu JavaScript agar kompatibel dengan
+    CommonJS dan AMD module system
+
+    <h2>Cara Export Default</h2>
+     - export default namaFunction; <br>
+     - export default function(){... } <br>
+     - export default namaVariable; <br>
+     - export default namaVariable = value; <br>
+     - export default NamaClass; <br>
+     - export default class { ... } <br>
+
+    <h2>Cara Import Default</h2>
+    - import aliasFunction from " /module-default.js"
+    - import {default as alias Variable} from "/module-default.js"
+    - import alias Variable from "/module-default.is"
+    - import {default as alias Variable} from "/module-default.is"
+    - import AliasClass from " /module-default.js"
+    - import {default as AliasClass} from "/module-default.js"
+
+    <h2>Default dan Named Export</h2>
+    - Dalam satu module, kita bisa menggabungkan export default dan export named <br>
+    - Yang tidak boleh adalah, dalam satu module, membuat lebih dari satu default <br>
+    - Cara import default dan named secara bersamaan bisa menggunakan perintah: <br>
+
+    import defaultAlias, {named1, named2} from "/module.js"; <br>
+    import {default as defaultAlias, named1, named2} from "/module.js";
+
+    <h2>Rekomendasi</h2>
+    - Bedakan antara default dan named, karena jika digabungkan kadang akan membingungkan ketika
+    melakukan import <br>
+    - Sebisa mungkin selalu gunakan export named dibandingkan export default
+</body>
+
+<script type="module" src="lib/export_default.js"></script>
+<script type="module">
+    import sumValue from "./lib/export_default.js";
+    let result = sumValue(1,2)
+    console.log(result)
+</script>
+
+<!--export default named-->
+<script type="module" src="lib/default_named_export.js"></script>
+<script type="module">
+    import defaultHello, {author, appName} from "./lib/default_named_export.js";
+
+    console.log(defaultHello("Adi Hidayat"));
+    console.log(author);
+    console.log(appName);
+</script>
+</html>

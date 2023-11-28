@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Export Multiple</title>
+</head>
+<body>
+    <h2>Export Multiple</h2>
+    - Sebelumnya kita selalu menggunakan kata kunci export diawal variable, function atau class <br>
+    - Sebenarnya kita bisa menggunakan export sekaligus beberapa data sekaligus, caranya cukup
+    gunakan perintah: <br>
+    export {variable, function, class, danLainLain}
+</body>
+<script type="module" src="lib/multiple.js"></script>
+<script type="module">
+    import {sayHello, Product, isTrue} from "./lib/multiple.js";
+    console.log(sayHello());
+    console.log(new Product());
+    console.log(isTrue);
+</script>
+</html>
